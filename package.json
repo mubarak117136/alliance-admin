@@ -1,0 +1,44 @@
+{
+  "name": "flagedu",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host 0.0.0.0 --port 3001",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.19",
+    "dayjs-nuxt": "^1.1.2",
+    "nuxt": "^3.17.5",
+    "sass": "^1.63.6",
+    "vite-plugin-vuetify": "^2.0.3",
+    "vuetify": "^3.6.11"
+  },
+  "dependencies": {
+    "@date-io/dayjs": "^3.0.0",
+    "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.4.11",
+    "@tiptap/extension-link": "^2.2.6",
+    "@tiptap/extension-table": "^2.2.6",
+    "@tiptap/extension-table-cell": "^2.2.6",
+    "@tiptap/extension-table-header": "^2.2.6",
+    "@tiptap/extension-table-row": "^2.2.6",
+    "@tiptap/pm": "^2.2.6",
+    "@tiptap/starter-kit": "^2.2.6",
+    "@tiptap/vue-3": "^2.2.6",
+    "@vee-validate/nuxt": "^4.10.7",
+    "@vee-validate/yup": "^4.10.8",
+    "add": "^2.0.6",
+    "apexcharts": "^3.49.1",
+    "pinia": "^2.1.4",
+    "uuid": "^9.0.0",
+    "vue-debounce": "^5.0.0",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue3-apexcharts": "^1.5.3",
+    "vue3-click-away": "^1.2.4",
+    "yup": "^1.2.0"
+  }
+}
