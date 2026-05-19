@@ -172,7 +172,9 @@
 										{{ item?.shipping_address?.address }}
 									</div>
 									<div class="text-body-2" v-if="item?.shipping_address">
-										{{ item?.shipping_address?.city_detail?.name }}, Bangladesh
+										{{ item?.shipping_address?.city }},
+										{{ item?.shipping_address?.state_detail?.name }},
+										{{ item?.shipping_address?.country_detail?.name }}
 									</div>
 									<div
 										class="text-body-2 mt-2"
@@ -183,6 +185,17 @@
 										<v-icon icon="mdi-email" size="x-small"></v-icon>
 										{{ item?.shipping_address?.email }}
 									</div>
+
+									<div class="bg-surface-light pa-4 rounded text-body-2 mt-2" v-if="item?.shipping_price">
+										{{ item?.shipping_price?.provider }} :
+										{{ item?.shipping_price?.service_name }} ({{
+											item?.shipping_price?.estimate_day
+										}}days) -
+										<span class="font-weight-bold"
+											>{{ item?.shipping_price?.price }}$</span
+										>
+									</div>
+
 									<v-btn
 										:loading="loading"
 										variant="tonal"
@@ -221,7 +234,7 @@
 												<div class="text-body-2">
 													{{
 														dayjs(i?.creation_time).format(
-															"DD, MMM YYYY, HH:mm"
+															"DD, MMM YYYY, HH:mm",
 														)
 													}}
 												</div>
@@ -408,7 +421,7 @@ const sumAttributePriceAdditions = (cartItem) => {
 	if (!cartItem || !cartItem.static_attribute_data) return 0;
 	let addition_price = Object.values(cartItem.static_attribute_data).reduce(
 		(sum, attr) => sum + (attr.price_addition || 0),
-		0
+		0,
 	);
 	return addition_price * cartItem?.total_item;
 };

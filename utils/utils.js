@@ -379,12 +379,10 @@ export const contactUsStatusColor = (status) => {
 };
 
 export const paymentMethodProvider = (type) => {
-	if (type == 1) {
-		return "SSLCommerz";
-	} else if (type == 2) {
-		return "Bkash";
-	} else if (type == 3) {
-		return "Nagad";
+	if (type == 4) {
+		return "Stripe";
+	} else {
+		return "None";
 	}
 };
 

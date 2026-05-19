@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/mubarak/Desktop/workspace/mo/alliancefencing/admin/components/orders/**)",
+      "Bash(grep -rn \"stripe\\\\|Stripe\\\\|provider\" /home/mubarak/Desktop/workspace/mo/alliancefencing/admin/utils/utils.js | grep -i \"provider\\\\|stripe\" | head -20)",
+      "Read(//home/mubarak/Desktop/workspace/mo/alliancefencing/admin/utils/**)",
+      "Bash(find /home/mubarak/Desktop/workspace/mo/alliancev3 -not -path \"*/admin/*\" -name \"*.py\" | xargs grep -l \"stripe\\\\|Stripe\\\\|PROVIDER\\\\|provider\" 2>/dev/null | head -10)",
+      "Read(//home/mubarak/Desktop/workspace/mo/alliancev3/**)",
+      "Read(//home/mubarak/Desktop/workspace/mo/alliancefencing/admin/pages/orders/**)"
+    ],
+    "additionalDirectories": [
+      "/home/mubarak/Desktop/workspace/mo/alliancev3/app/server/sell/templates/sell/pdf"
+    ]
+  }
+}

@@ -5,15 +5,10 @@
 				<div class="d-flex flex-column ga-2">
 					<div class="text-body-2 d-flex ga-4 text-surface-bright">
 						<div>Payment method:</div>
-						<div v-if="props?.item?.payment?.cash_on_delivery == true">
-							Cash on Delivery
-						</div>
-						<div v-else>
-							<div>
-								{{
-									paymentMethodProvider(props?.item?.payment?.gateway?.provider)
-								}}
-							</div>
+						<div>
+							{{
+								paymentMethodProvider(props?.item?.payment?.gateway?.provider)
+							}}
 						</div>
 					</div>
 					<div class="text-body-2 d-flex ga-4 text-surface-bright">
@@ -23,84 +18,28 @@
 
 					<div
 						class="d-flex flex-column ga-2"
-						v-if="
-							props?.item?.payment?.gateway?.provider == 1 &&
-							props?.item?.payment?.cash_on_delivery == false
-						"
+						v-if="props?.item?.payment?.gateway?.provider == 4"
 					>
 						<div class="text-body-2 d-flex ga-4 text-surface-bright">
 							<div>Total paid:</div>
-							<div>{{ props?.item?.payment?.data?.amount }}৳</div>
+							<div>
+								{{ props?.item?.payment?.data?.amount_captured / 100 }}$
+							</div>
 						</div>
 
 						<div class="text-body-2 d-flex text-surface-bright ga-4">
 							<div>Transaction ID:</div>
-							<div>{{ props?.item?.payment?.data?.tran_id }}</div>
+							<div>{{ props?.item?.payment?.data?.id }}</div>
 						</div>
 
-						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Bank transaction ID:</div>
-							<div>{{ props?.item?.payment?.data?.bank_tran_id }}</div>
-						</div>
-
-						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Card issuer:</div>
-							<div>{{ props?.item?.payment?.data?.card_issuer }}</div>
-						</div>
 						<div class="text-body-2 d-flex text-surface-bright ga-4">
 							<div>Card type:</div>
-							<div>{{ props?.item?.payment?.data?.card_type }}</div>
-						</div>
-					</div>
-
-					<div
-						class="d-flex flex-column ga-2"
-						v-if="
-							props?.item?.payment?.gateway?.provider == 2 &&
-							props?.item?.payment?.cash_on_delivery == false
-						"
-					>
-						<div class="text-body-2 d-flex ga-4 text-surface-bright">
-							<div>Total paid:</div>
-							<div>{{ props?.item?.payment?.data?.amount }}৳</div>
+							<div>{{ props?.item?.payment?.data?.source?.brand }}</div>
 						</div>
 
 						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Transaction ID:</div>
-							<div>{{ props?.item?.payment?.data?.trxID }}</div>
-						</div>
-
-						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Payment ID:</div>
-							<div>{{ props?.item?.payment?.data?.paymentID }}</div>
-						</div>
-
-						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Payer Account:</div>
-							<div>{{ props?.item?.payment?.data?.payerAccount }}</div>
-						</div>
-					</div>
-
-					<div
-						class="d-flex flex-column ga-2"
-						v-if="
-							props?.item?.payment?.gateway?.provider == 3 &&
-							props?.item?.payment?.cash_on_delivery == false
-						"
-					>
-						<div class="text-body-2 d-flex ga-4 text-surface-bright">
-							<div>Total paid:</div>
-							<div>{{ props?.item?.payment?.data?.amount }}৳</div>
-						</div>
-
-						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Ref ID:</div>
-							<div>{{ props?.item?.payment?.data?.paymentRefId }}</div>
-						</div>
-
-						<div class="text-body-2 d-flex text-surface-bright ga-4">
-							<div>Payer Account:</div>
-							<div>{{ props?.item?.payment?.data?.clientMobileNo }}</div>
+							<div>Last 4 digits:</div>
+							<div>{{ props?.item?.payment?.data?.source?.last4 }}</div>
 						</div>
 					</div>
 
