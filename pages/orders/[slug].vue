@@ -411,9 +411,9 @@ const handleBack = () => {
 
 const cartItemVariantResolver = (i) => {
 	if (item?.value?.status?.type == 1) {
-		return i?.variant_detail?.name;
+		return i?.variant_detail?.humanise_name || i?.variant_detail?.name;
 	} else {
-		return i?.variant_data?.name;
+		return i?.variant_data?.humanise_name || i?.variant_data?.name;
 	}
 };
 

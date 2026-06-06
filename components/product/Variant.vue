@@ -5,7 +5,7 @@
 				<v-row v-for="(item, idx) in variants" :key="'variants_' + idx">
 					<v-col cols="6" sm="4" lg="3">
 						<v-text-field
-							v-model="variants[idx].name"
+							v-model="variants[idx].humanise_name"
 							class="text-surface-bright"
 							label="Name"
 							variant="outlined"

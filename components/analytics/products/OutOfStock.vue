@@ -31,7 +31,7 @@
 							>
 						</td>
 						<td class="text-surface-bright">
-							{{ item?.name }}
+							{{ item?.humanise_name || item?.name }}
 						</td>
 						<td class="text-surface-bright">
 							{{ item?.quantity }}
